@@ -10,19 +10,26 @@ const routes = [
     component: () => import('../views/user/Login.vue'),
   },
   {
-    path: '/page',
-    name: 'page',
-    component: () => import('../views/page/Page.vue'),
-  },
-  {
-    path: '/detail',
-    name: 'detail',
-    component: () => import('../views/detail/Detail.vue'),
-  },
-  {
-    path: '/list',
-    name: 'list',
-    component: () => import('../views/list/List.vue'),
+    path: '/layout',
+    name: 'layout',
+    component: () => import('../views/layout/Layout.vue'),
+    children: [
+      {
+        path: '/page',
+        name: 'page',
+        component: () => import('../views/page/Page.vue'),
+      },
+      {
+        path: '/detail',
+        name: 'detail',
+        component: () => import('../views/detail/Detail.vue'),
+      },
+      {
+        path: '/list',
+        name: 'list',
+        component: () => import('../views/list/List.vue'),
+      },
+    ],
   },
 ];
 
